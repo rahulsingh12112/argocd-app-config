@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-{{ .Chart.Name }}
+  labels:
+    app: {{ .Release.Name }}-demo
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-demo
+  template: 
+    metadata: 
+      labels:
+        app: {{ .Release.Name }}-demo
+      spec:
+        containers:
+        - name: {{ .Chart.Name}}
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag}}
+          ports:
+          - containerPort: {{ .Values.service.port}}
+          
+
+  
