@@ -13,12 +13,12 @@ spec:
     metadata: 
       labels:
         app: {{ .Release.Name }}-demo
-      spec:
-        containers:
-        - name: {{ .Chart.Name}}
-          image: {{ .Values.image.repository }}:{{ .Values.image.tag}}
-          ports:
-          - containerPort: {{ .Values.service.port}}
-          
+    spec:
+      containers:
+      - name: {{ .Chart.Name}}
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag}}
+        ports:
+        - containerPort: {{ .Values.service.port}}
+        
 
   
