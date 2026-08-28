@@ -1,0 +1,6 @@
+apiVersion: v2
+name: bg-chart
+description: Blue-Green rollout via Helm
+type: application
+version: 0.1.0
+appVersion: "1.0.0"

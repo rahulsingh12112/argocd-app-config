@@ -1,0 +1,8 @@
+replicaCount: 3
+
+image:
+  repository: argoproj/rollouts-demo
+  tag: blue
+
+containerPort: 8080
+servicePort: 80
